@@ -51,6 +51,7 @@ def drinkStyle(q):
     return style_answer
 
 def cocktail(name):
+    print 'cocktail name'
 
 
 def main():
