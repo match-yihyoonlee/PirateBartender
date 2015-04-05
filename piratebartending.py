@@ -50,14 +50,16 @@ def drinkStyle(q):
                     break
     return style_answer
 
-def cocktail(name):
-    print 'cocktail name'
-
+def cocktail():
+    cocktailNick = ['Curacao Punch','Gin Sour','Flaming Volcano','Tequila Sunrise']
+    cocktailName = random.choice(cocktailNick)
+    return cocktailName
 
 def main():
     askDrink = drinkStyle(questions)
     drinkIngredient = createDrink(askDrink)
     print 'Your drink ingredients are {}'.format(drinkIngredient)
+    print 'Your cocktail is : {}'.format(cocktail())
 
 if __name__ == '__main__':
     main()
