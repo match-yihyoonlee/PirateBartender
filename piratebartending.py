@@ -50,6 +50,9 @@ def drinkStyle(q):
                     break
     return style_answer
 
+def cocktail(name):
+
+
 def main():
     askDrink = drinkStyle(questions)
     drinkIngredient = createDrink(askDrink)
