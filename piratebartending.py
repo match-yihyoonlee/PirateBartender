@@ -2,11 +2,11 @@ __author__ = 'Yih-Yoon Lee'
 import random
 
 questions = {
-    "strong": "Do ye like yer drinks strong?",
-    "salty": "Do ye like it with a salty tang?",
-    "bitter": "Are ye a lubber who likes it bitter?",
-    "sweet": "Would ye like a bit of sweetness with yer poison?",
-    "fruity": "Are ye one for a fruity finish?"
+    "strong": "Do ye like yer drinks strong? ",
+    "salty": "Do ye like it with a salty tang? ",
+    "bitter": "Are ye a lubber who likes it bitter? ",
+    "sweet": "Would ye like a bit of sweetness with yer poison? ",
+    "fruity": "Are ye one for a fruity finish? "
 }
 
 ingredients = {
@@ -17,23 +17,21 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 
+
 def createDrink(style_answer):
     drink = []
-    for pref, ans in style_answer.iteritems():
-        if ans == True:
-            drink.append(random.choice(ingredients[pref]))
+    for preference, answer in style_answer.iteritems():
+        if answer:
+            drink.append(random.choice(ingredients[preference]))
     print drink
     return drink
+
 
 def drinkStyle(q):
     style_answer = {}
     for ingredient, question in questions.iteritems():
-
         answer = raw_input(question)
-
-        var = 1
-        while var == 1:
-
+        while True:
             if answer.upper() == 'Y' or answer.upper() == 'yes':
                 style_answer[ingredient] = True
                 break
@@ -50,16 +48,20 @@ def drinkStyle(q):
                     break
     return style_answer
 
+
 def cocktail():
-    cocktailNick = ['Curacao Punch','Gin Sour','Flaming Volcano','Tequila Sunrise']
+    cocktailNick = ['Curacao Punch', 'Gin Sour',
+                    'Flaming Volcano', 'Tequila Sunrise']
     cocktailName = random.choice(cocktailNick)
     return cocktailName
+
 
 def main():
     askDrink = drinkStyle(questions)
     drinkIngredient = createDrink(askDrink)
     print 'Your drink ingredients are {}'.format(drinkIngredient)
     print 'Your cocktail is : {}'.format(cocktail())
+
 
 if __name__ == '__main__':
     main()
